@@ -42,8 +42,9 @@ header {
     padding: 90px 20px;
     text-align: center;
     background: linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.95)),
-    url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2070');
+    url('IMG_8597.png');
     background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
@@ -56,6 +57,7 @@ header {
     margin: auto;
 }
 
+/* BUTTONS */
 .btn {
     padding: 14px 22px;
     margin: 10px;
@@ -87,12 +89,13 @@ h2 {
     margin-bottom: 25px;
 }
 
-/* CARDS */
+/* GRID */
 .grid {
     display: grid;
     gap: 20px;
 }
 
+/* CARDS */
 .card {
     background: #111;
     padding: 20px;
@@ -165,7 +168,7 @@ form button {
     font-weight: bold;
 }
 
-/* FLOATING BUTTON */
+/* FLOAT BUTTON */
 .call-btn {
     position: fixed;
     bottom: 20px;
@@ -201,41 +204,51 @@ form button {
 <a href="#contact" class="btn btn-secondary">Get Free Quote</a>
 </section>
 
+<!-- SERVICES -->
 <section class="section">
 <h2>Our Services</h2>
 <div class="grid">
-
 <div class="card"><h3>Paint Correction</h3><p>Remove swirls, scratches, and restore deep gloss.</p></div>
 <div class="card"><h3>Ceramic Coating</h3><p>Long-lasting protection with a mirror finish.</p></div>
 <div class="card"><h3>Interior Detailing</h3><p>Deep cleaning, stain removal, and odor reset.</p></div>
 <div class="card"><h3>Pet Hair Removal</h3><p>We get what others can’t.</p></div>
 <div class="card"><h3>Engine Bay Cleaning</h3><p>Safe and detailed engine restoration.</p></div>
-
 </div>
 </section>
 
+<!-- GALLERY -->
 <section class="section">
 <h2>Our Work</h2>
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070">
-<img src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2070">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070">
-<img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2070">
-<img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=2070">
+<img src="IMG_8592.png">
+<img src="IMG_8595.png">
+<img src="IMG_8596.png">
+<img src="IMG_8597.png">
+<img src="IMG_8601.jpeg">
 </div>
 </section>
 
+<!-- BEFORE AFTER INTERIOR -->
 <section class="section">
-<h2>Before & After Results</h2>
-
+<h2>Interior Transformation</h2>
 <div class="before-after">
-<img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2070">
-<img src="https://images.unsplash.com/photo-1515923256482-1c04580b477c?q=80&w=2070" class="before">
+<img src="IMG_8598.png">
+<img src="IMG_8600.png" class="before">
 <input type="range" min="0" max="100" value="50" class="slider">
 </div>
-
 </section>
 
+<!-- BEFORE AFTER EXTERIOR -->
+<section class="section">
+<h2>Exterior Transformation</h2>
+<div class="before-after">
+<img src="IMG_8598.png">
+<img src="IMG_8598.png" class="before">
+<input type="range" min="0" max="100" value="50" class="slider">
+</div>
+</section>
+
+<!-- WHY -->
 <section class="section">
 <h2>Why Choose Us</h2>
 <div class="grid">
@@ -245,6 +258,7 @@ form button {
 </div>
 </section>
 
+<!-- REVIEWS -->
 <section class="section">
 <h2>Reviews</h2>
 <div class="grid">
@@ -254,6 +268,7 @@ form button {
 </div>
 </section>
 
+<!-- FAQ -->
 <section class="section">
 <h2>FAQ</h2>
 <div class="grid">
@@ -263,6 +278,7 @@ form button {
 </div>
 </section>
 
+<!-- CONTACT -->
 <section class="section" id="contact">
 <h2>Get a Free Quote</h2>
 <form>
@@ -281,11 +297,13 @@ form button {
 <a href="tel:7750000000" class="call-btn">Call Now</a>
 
 <script>
-const slider = document.querySelector('.slider');
-const before = document.querySelector('.before');
+const sliders = document.querySelectorAll('.slider');
+const befores = document.querySelectorAll('.before');
 
-slider.addEventListener('input', (e) => {
-    before.style.width = e.target.value + "%";
+sliders.forEach((slider, index) => {
+    slider.addEventListener('input', (e) => {
+        befores[index].style.width = e.target.value + "%";
+    });
 });
 </script>
 
