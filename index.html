@@ -10,7 +10,6 @@
     --black: #0a0a0a;
     --gold: #c8a96a;
     --white: #ffffff;
-    --gray: #777;
 }
 
 body {
@@ -20,6 +19,7 @@ body {
     color: var(--white);
 }
 
+/* HEADER */
 header {
     position: sticky;
     top: 0;
@@ -27,49 +27,42 @@ header {
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid #222;
     z-index: 1000;
-}
-
-header a {
-    color: var(--white);
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 14px;
 }
 
 .phone {
     color: var(--gold);
     font-weight: bold;
+    text-decoration: none;
 }
 
+/* HERO */
 .hero {
-    padding: 80px 20px;
+    padding: 90px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.95)),
+    background: linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.95)),
     url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2070');
     background-size: cover;
-    background-position: center;
 }
 
 .hero h1 {
     font-size: 34px;
-    line-height: 1.3;
 }
 
 .hero p {
     color: #ccc;
-    margin: 15px 0 25px;
+    max-width: 500px;
+    margin: auto;
 }
 
 .btn {
-    display: inline-block;
     padding: 14px 22px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
+    display: inline-block;
+    font-weight: bold;
 }
 
 .btn-primary {
@@ -78,12 +71,13 @@ header a {
 }
 
 .btn-secondary {
-    border: 1px solid var(--white);
-    color: var(--white);
+    border: 1px solid #fff;
+    color: #fff;
 }
 
+/* SECTIONS */
 .section {
-    padding: 60px 20px;
+    padding: 70px 20px;
     max-width: 1100px;
     margin: auto;
 }
@@ -93,7 +87,8 @@ h2 {
     margin-bottom: 25px;
 }
 
-.services, .reviews, .faq {
+/* CARDS */
+.grid {
     display: grid;
     gap: 20px;
 }
@@ -107,27 +102,52 @@ h2 {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
-.footer {
-    text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid #222;
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
-.call-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--gold);
-    color: #000;
-    padding: 15px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* BEFORE AFTER */
+.before-after {
+    position: relative;
+    max-width: 650px;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.before-after img {
+    width: 100%;
+}
+
+.before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+}
+
+.slider {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* FORM */
 form input, form textarea {
     width: 100%;
     padding: 12px;
@@ -144,6 +164,26 @@ form button {
     border: none;
     font-weight: bold;
 }
+
+/* FLOATING BUTTON */
+.call-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #222;
+}
 </style>
 </head>
 
@@ -151,137 +191,86 @@ form button {
 
 <header>
 <div><strong>Clean Coats Garage</strong></div>
-<div>
 <a href="tel:7750000000" class="phone">(775) 000-0000</a>
-</div>
 </header>
 
 <section class="hero">
-<h1>Luxury Auto Detailing in South Lake Tahoe, Reno & Carson City</h1>
-<p>Paint correction, ceramic coatings, and deep interior restoration — done right the first time. We don’t sell detailing… we sell integrity.</p>
+<h1>High-End Auto Detailing in South Lake Tahoe, Reno & Carson City</h1>
+<p>Paint correction, ceramic coatings, and full interior restoration. We don’t rush jobs — we perfect them.</p>
 <a href="tel:7750000000" class="btn btn-primary">Call Now</a>
 <a href="#contact" class="btn btn-secondary">Get Free Quote</a>
 </section>
 
 <section class="section">
-<h2>Premium Detailing Services</h2>
-<div class="services">
+<h2>Our Services</h2>
+<div class="grid">
 
-<div class="card">
-<h3>Paint Correction</h3>
-<p>Remove swirl marks, scratches, and restore deep gloss to your paint.</p>
-</div>
-
-<div class="card">
-<h3>Ceramic Coatings</h3>
-<p>Long-term protection with a high-gloss, hydrophobic finish.</p>
-</div>
-
-<div class="card">
-<h3>Interior Deep Cleaning</h3>
-<p>Stain removal, pet hair elimination, odor treatment — full reset.</p>
-</div>
-
-<div class="card">
-<h3>Engine Bay Cleaning</h3>
-<p>Safe, detailed cleaning to restore your engine compartment.</p>
-</div>
-
-<div class="card">
-<h3>Full Detail Packages</h3>
-<p>Inside and out, your vehicle will look better than when you bought it.</p>
-</div>
+<div class="card"><h3>Paint Correction</h3><p>Remove swirls, scratches, and restore deep gloss.</p></div>
+<div class="card"><h3>Ceramic Coating</h3><p>Long-lasting protection with a mirror finish.</p></div>
+<div class="card"><h3>Interior Detailing</h3><p>Deep cleaning, stain removal, and odor reset.</p></div>
+<div class="card"><h3>Pet Hair Removal</h3><p>We get what others can’t.</p></div>
+<div class="card"><h3>Engine Bay Cleaning</h3><p>Safe and detailed engine restoration.</p></div>
 
 </div>
 </section>
 
 <section class="section">
-<h2>Why Clients Choose Us</h2>
-<div class="services">
-
-<div class="card">
-<p><strong>Fast Response</strong><br>We answer calls and messages quickly — no waiting days for a quote.</p>
-</div>
-
-<div class="card">
-<p><strong>Detail-Obsessed</strong><br>Every inch is handled with precision and care.</p>
-</div>
-
-<div class="card">
-<p><strong>Modern & Professional</strong><br>New-school service with better communication and results.</p>
-</div>
-
-<div class="card">
-<p><strong>Locally Owned</strong><br>Serving South Lake Tahoe, Reno, and Carson City.</p>
-</div>
-
+<h2>Our Work</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070">
+<img src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2070">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070">
+<img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2070">
+<img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=2070">
 </div>
 </section>
 
 <section class="section">
-<h2>What Customers Are Saying</h2>
-<div class="reviews">
+<h2>Before & After Results</h2>
 
-<div class="card">
-<p>“My car honestly looks better than when I bought it. The attention to detail is unreal.”</p>
+<div class="before-after">
+<img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2070">
+<img src="https://images.unsplash.com/photo-1515923256482-1c04580b477c?q=80&w=2070" class="before">
+<input type="range" min="0" max="100" value="50" class="slider">
 </div>
 
-<div class="card">
-<p>“Fast, professional, and super easy to work with. Highly recommend.”</p>
-</div>
+</section>
 
-<div class="card">
-<p>“Got pet hair completely out of my seats — didn’t think it was possible.”</p>
-</div>
-
+<section class="section">
+<h2>Why Choose Us</h2>
+<div class="grid">
+<div class="card"><p><strong>Fast Response</strong><br>We get back to you quickly.</p></div>
+<div class="card"><p><strong>Detail Focused</strong><br>We don’t cut corners.</p></div>
+<div class="card"><p><strong>Locally Owned</strong><br>Serving Tahoe, Reno, Carson City.</p></div>
 </div>
 </section>
 
 <section class="section">
-<h2>About Clean Coats Garage</h2>
-<p>Clean Coats Garage was built on one thing — doing the job right. No shortcuts, no rushed work, no cutting corners.</p>
-<p>We focus on high-end detailing services for people who actually care about their vehicles. Whether it’s paint correction or a full interior reset, you’re getting real attention to detail every time.</p>
+<h2>Reviews</h2>
+<div class="grid">
+<div class="card"><p>“Car looks insane. Worth every dollar.”</p></div>
+<div class="card"><p>“Super professional and easy to work with.”</p></div>
+<div class="card"><p>“Interior looked brand new again.”</p></div>
+</div>
 </section>
 
 <section class="section">
-<h2>Service Areas</h2>
-<p>We proudly offer auto detailing in South Lake Tahoe, Reno, Carson City, and surrounding areas.</p>
-</section>
-
-<section class="section">
-<h2>FAQs</h2>
-<div class="faq">
-
-<div class="card">
-<p><strong>How long does a detail take?</strong><br>Most services take between 2–6 hours depending on the condition.</p>
-</div>
-
-<div class="card">
-<p><strong>Do you remove deep scratches?</strong><br>Paint correction can significantly reduce or eliminate most imperfections.</p>
-</div>
-
-<div class="card">
-<p><strong>How long does ceramic coating last?</strong><br>Typically 2–5 years with proper maintenance.</p>
-</div>
-
-<div class="card">
-<p><strong>Do you come to me?</strong><br>Mobile service may be available depending on location.</p>
-</div>
-
+<h2>FAQ</h2>
+<div class="grid">
+<div class="card"><p><strong>How long?</strong><br>2–6 hours depending on job.</p></div>
+<div class="card"><p><strong>Do you travel?</strong><br>Yes, depending on location.</p></div>
+<div class="card"><p><strong>Ceramic coating lifespan?</strong><br>2–5 years.</p></div>
 </div>
 </section>
 
 <section class="section" id="contact">
-<h2>Get Your Free Quote</h2>
-<p>Call now or fill out the form below — we’ll get back to you fast.</p>
-
+<h2>Get a Free Quote</h2>
 <form>
-<input type="text" placeholder="Your Name">
-<input type="tel" placeholder="Phone Number">
+<input type="text" placeholder="Name">
+<input type="tel" placeholder="Phone">
 <textarea placeholder="What do you need done?"></textarea>
 <button type="submit">Request Quote</button>
 </form>
-
 </section>
 
 <div class="footer">
@@ -290,6 +279,15 @@ form button {
 </div>
 
 <a href="tel:7750000000" class="call-btn">Call Now</a>
+
+<script>
+const slider = document.querySelector('.slider');
+const before = document.querySelector('.before');
+
+slider.addEventListener('input', (e) => {
+    before.style.width = e.target.value + "%";
+});
+</script>
 
 </body>
 </html>
